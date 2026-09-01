@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle Seu Dinheiro em 25 Minutos | PlanoUP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQjE3MTIiLz4KICA8dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNGMkE3MUIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+CiAgPHJlY3QgeD0iMTYiIHk9IjQ5IiB3aWR0aD0iMzIiIGhlaWdodD0iMyIgZmlsbD0iIzFGNkY1QyIvPgo8L3N2Zz4K">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQjE3MTIiLz4KICA8dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNGMkE3MUIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+CiAgPHJlY3QgeD0iMTYiIHk9IjQ5IiB3aWR0aD0iMzIiIGhlaWdodD0iMyIgZmlsbD0iIzFGNkY1QyIvPgo8L3N2Zz4K">
+<meta name="description" content="Descubra em cerca de 25 minutos para onde seu dinheiro está indo. Painel interativo + ebook + planner de 30 dias, por R$ 24,90.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Controle Seu Dinheiro em 25 Minutos | PlanoUP">
+<meta property="og:description" content="Seu dinheiro não some. Você só ainda não viu para onde ele está indo. Descubra em 25 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlanoUP">
+<meta name="theme-color" content="#1B1712">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-paper:#F6F1E6;
+  --bg-paper-2:#EFE8D8;
+  --ink:#1B1712;
+  --ink-70: rgba(27,23,18,0.7);
+  --ink-50: rgba(27,23,18,0.5);
+  --ink-15: rgba(27,23,18,0.15);
+  --gold:#F2A71B;
+  --gold-dark:#C9860E;
+  --petrol:#1F6F5C;
+  --petrol-light:#2C8C74;
+  --paper-on-dark: rgba(246,241,230,0.9);
+  --paper-on-dark-60: rgba(246,241,230,0.6);
+  --paper-on-dark-30: rgba(246,241,230,0.14);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Public Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --container: 1180px;
+  --radius: 2px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family: var(--font-body);
+  background: var(--bg-paper);
+  color: var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%; display:block;}
+button{font-family:inherit; cursor:pointer; border:none; background:none;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:var(--container); margin:0 auto; padding:0 20px;}
+@media(min-width:768px){ .wrap{padding:0 40px;} }
+
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.serif{font-family: var(--font-display);}
+.mono{font-family: var(--font-mono);}
+
+.underline-draw{
+  position:relative;
+  display:inline;
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-repeat:no-repeat;
+  background-size: 0% 3px;
+  background-position: 0 100%;
+  padding-bottom: 2px;
+  transition: background-size 1.1s cubic-bezier(.2,.7,.3,1);
+}
+.underline-draw.in-view{ background-size: 100% 3px; }
+
+.reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in-view{ opacity:1; transform:none; }
+.reveal-delay-1.in-view{ transition-delay:.08s; }
+.reveal-delay-2.in-view{ transition-delay:.16s; }
+.reveal-delay-3.in-view{ transition-delay:.24s; }
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal, .underline-draw, .receipt-row, .btn, .accordion-panel{ transition:none !important; }
+  .reveal{opacity:1; transform:none;}
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family: var(--font-body);
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:0.01em;
+  padding:17px 26px;
+  border-radius: var(--radius);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  text-align:center;
+  line-height:1.2;
+}
+.btn-gold{
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+.btn-gold:hover{ background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(242,167,27,0.28); }
+.btn-outline{
+  background:transparent;
+  border:1.5px solid var(--paper-on-dark-30);
+  color: var(--paper-on-dark);
+}
+.btn-outline:hover{ border-color: var(--gold); color: var(--gold); }
+.btn-block{ width:100%; }
+
+.price-badge{
+  display:inline-flex;
+  flex-direction:column;
+  gap:6px;
+  padding:16px 20px;
+  border:1px solid var(--ink-15);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.35);
+}
+.price-badge.on-dark{ border-color: var(--paper-on-dark-30); background: rgba(255,255,255,0.03); }
+.price-tag-label{
+  font-family: var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color: var(--petrol);
+  font-weight:600;
+}
+.on-dark .price-tag-label{ color: var(--gold); }
+.price-old{
+  font-family: var(--font-mono);
+  font-size:16px;
+  color: var(--ink-50);
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-50);
+}
+.on-dark .price-old{ color: var(--paper-on-dark-60); text-decoration-color: var(--paper-on-dark-60); }
+.price-new{
+  font-family: var(--font-mono);
+  font-weight:700;
+  font-size:38px;
+  color: var(--ink);
+  line-height:1;
+}
+.on-dark .price-new{ color: var(--bg-paper); }
+.price-micro{
+  font-size:12.5px;
+  color: var(--ink-50);
+}
+.on-dark .price-micro{ color: var(--paper-on-dark-60); }
+
+.site-header{
+  position:sticky; top:0; z-index:40;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px;
+}
+.logo{
+  font-family: var(--font-display);
+  font-size:20px;
+  font-weight:600;
+  color: var(--bg-paper);
+  letter-spacing:0.01em;
+}
+.logo span{ color: var(--gold); }
+.header-price{
+  font-family: var(--font-mono);
+  font-size:13px;
+  color: var(--paper-on-dark-60);
+}
+.header-price b{ color: var(--gold); font-weight:700; }
+
+.hero{
+  background: var(--ink);
+  color: var(--bg-paper);
+  padding: 44px 0 56px;
+  position:relative;
+  overflow:hidden;
+}
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+@media(min-width:1000px){
+  .hero .wrap{ grid-template-columns: 1.05fr 0.95fr; align-items:center; gap:56px; }
+}
+.hero-eyebrow{ color: var(--gold); margin-bottom:18px; }
+.hero h1{
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size: clamp(32px, 7.4vw, 56px);
+  line-height:1.06;
+  letter-spacing:-0.01em;
+}
+.hero h1 em{ font-style:normal; color: var(--gold); }
+.hero-sub{
+  margin-top:22px;
+  font-size:17px;
+  line-height:1.55;
+  color: var(--paper-on-dark);
+  max-width:520px;
+}
+.hero-micro{
+  margin-top:14px;
+  font-size:14.5px;
+  color: var(--paper-on-dark-60);
+  border-left:2px solid var(--gold);
+  padding-left:12px;
+  max-width:480px;
+}
+.hero-cta-block{ margin-top:32px; display:flex; flex-direction:column; gap:16px; align-items:flex-start;}
+.hero-cta-block .btn{ font-size:16px; padding:19px 28px; width:100%; }
+@media(min-width:520px){ .hero-cta-block .btn{ width:auto; } }
+.hero-guarantee-line{ font-size:12.5px; color:var(--paper-on-dark-60); }
+
+.mock-stage{ position:relative; }
+.mock-receipt-back{
+  position:absolute;
+  width:70%;
+  top:-6%;
+  right:-6%;
+  opacity:0.14;
+  filter: blur(1px);
+  transform: rotate(6deg);
+  z-index:0;
+}
+.mock-receipt-back-2{
+  position:absolute;
+  width:55%;
+  bottom:-8%;
+  left:-8%;
+  opacity:0.10;
+  filter: blur(1px);
+  transform: rotate(-10deg);
+  z-index:0;
+}
+.phone{
+  position:relative;
+  z-index:1;
+  max-width:320px;
+  margin:0 auto;
+  background: var(--bg-paper);
+  border-radius:26px;
+  border: 6px solid #0e0c09;
+  box-shadow: 0 30px 60px -12px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  overflow:hidden;
+}
+.phone-notch{ height:22px; background:#0e0c09; position:relative; }
+.phone-notch::after{ content:''; position:absolute; top:6px; left:50%; transform:translateX(-50%); width:60px; height:8px; background:#000; border-radius:6px; }
+.phone-screen{ padding:18px 18px 22px; }
+.mockup-app-eyebrow{ font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--petrol); font-weight:600; }
+.mockup-app-title{ font-family:var(--font-display); font-size:18px; font-weight:600; margin-top:4px; }
+.pot-row{ display:flex; gap:8px; margin-top:16px; }
+.pot{ flex:1; border:1px solid var(--ink-15); border-radius:4px; padding:10px 8px; background:rgba(255,255,255,0.5); }
+.pot-label{ font-size:9.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-50); font-weight:600; }
+.pot-value{ font-family:var(--font-mono); font-size:14px; font-weight:600; margin-top:4px; }
+.pot.essencial{ border-top:3px solid var(--petrol); }
+.pot.estilo{ border-top:3px solid var(--gold); }
+.pot.futuro{ border-top:3px solid var(--ink); }
+.mini-receipt{ margin-top:16px; border-top:1px dashed var(--ink-15); padding-top:12px; }
+.mini-receipt-row{ display:flex; justify-content:space-between; font-size:12px; padding:5px 0; }
+.mini-receipt-row span:first-child{ color:var(--ink-70); }
+.mini-receipt-row span:last-child{ font-family:var(--font-mono); }
+.mini-receipt-total{ display:flex; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px solid var(--ink); font-weight:700; font-family:var(--font-mono); font-size:14px; }
+
+section{ padding: 64px 0; }
+@media(min-width:900px){ section{ padding:96px 0; } }
+.section-dark{ background: var(--ink); color: var(--bg-paper); }
+.section-paper2{ background: var(--bg-paper-2); }
+.section-gold{ background: var(--gold); color: var(--ink); }
+
+.h2{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size: clamp(26px, 4.6vw, 40px);
+  line-height:1.12;
+  letter-spacing:-0.01em;
+}
+.h2-lead{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:500;
+  font-size: clamp(22px, 4vw, 32px);
+  color: var(--petrol);
+  margin-top:6px;
+}
+.section-dark .h2-lead{ color: var(--gold); }
+.lede{ font-size:16.5px; line-height:1.6; color:var(--ink-70); max-width:560px; margin-top:16px;}
+.section-dark .lede{ color: var(--paper-on-dark); }
+
+.pain-grid{ display:grid; grid-template-columns:1fr; gap:36px; margin-top:36px; align-items:start; }
+@media(min-width:900px){ .pain-grid{ grid-template-columns:1fr 1fr; gap:64px; } }
+.receipt{
+  background:#fffdf8;
+  border:1px solid var(--ink-15);
+  box-shadow: 0 20px 46px -18px rgba(27,23,18,0.28);
+  padding:26px 24px;
+  position:relative;
+  transform: rotate(-0.6deg);
+}
+.receipt::before{
+  content:'';
+  position:absolute; left:0; right:0; bottom:-9px; height:18px;
+  background-image: linear-gradient(135deg, #fffdf8 50%, transparent 50%), linear-gradient(-135deg, #fffdf8 50%, transparent 50%);
+  background-size: 16px 18px; background-position:bottom;
+  background-repeat:repeat-x;
+}
+.receipt-head{ text-align:center; font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-50); padding-bottom:14px; border-bottom:1px dashed var(--ink-15); }
+.receipt-row{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:10px 0; font-size:14.5px;
+  border-bottom:1px dotted var(--ink-15);
+  opacity:0; transform: translateX(-8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.receipt-row.in-view{ opacity:1; transform:none; }
+.receipt-row span:last-child{ font-family:var(--font-mono); font-weight:600; }
+.receipt-total{
+  display:flex; justify-content:space-between; margin-top:14px; padding-top:14px;
+  border-top:2px solid var(--ink); font-weight:700; font-size:17px;
+}
+.receipt-total span:last-child{ font-family:var(--font-mono); }
+.pain-copy .h2{ margin-bottom:0; }
+.pain-note{ margin-top:26px; font-size:15.5px; line-height:1.6; }
+.pain-note strong{ font-family:var(--font-display); font-style:italic; font-weight:500; }
+.pain-tag{ margin-top:18px; display:inline-block; font-family:var(--font-mono); font-size:12.5px; color:var(--petrol); border:1px solid var(--petrol); padding:6px 12px; border-radius:20px; }
+
+.break-block{ text-align:center; max-width:760px; margin:0 auto; }
+.break-block .h2{ font-size: clamp(30px,7vw,54px); }
+.break-block .h2-lead{ font-size: clamp(24px,5.4vw,40px); margin-top:2px; }
+.break-copy{ margin-top:30px; font-size:16.5px; line-height:1.65; color:var(--paper-on-dark); max-width:520px; margin-left:auto; margin-right:auto; }
+.break-highlight{ margin-top:30px; font-family:var(--font-display); font-style:italic; font-size: clamp(20px,3.6vw,26px); color:var(--gold); }
+
+.steps-head{ text-align:center; max-width:640px; margin:0 auto; }
+.steps-head .lede{ margin-left:auto; margin-right:auto; }
+.steps-rail{ margin-top:52px; position:relative; }
+.steps-rail-line{ position:absolute; top:15px; left:6%; right:6%; height:1px; background: var(--ink-15); display:none; }
+@media(min-width:900px){ .steps-rail-line{ display:block; } }
+.steps-grid{ display:grid; grid-template-columns:1fr; gap:28px; position:relative; z-index:1; }
+@media(min-width:640px){ .steps-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:900px){ .steps-grid{ grid-template-columns: repeat(4,1fr); } }
+.step-card{ background:rgba(255,255,255,0.4); border:1px solid var(--ink-15); padding:22px 20px; }
+.step-num{ font-family:var(--font-mono); font-size:12px; color:var(--petrol); font-weight:700; letter-spacing:0.08em; }
+.step-title{ font-family:var(--font-display); font-weight:600; font-size:19px; margin-top:10px; }
+.step-desc{ margin-top:8px; font-size:14px; line-height:1.55; color:var(--ink-70); }
+.flow-line{ margin-top:36px; text-align:center; font-family:var(--font-mono); font-size:12.5px; color:var(--petrol); letter-spacing:0.06em; }
+
+.demo-head{ text-align:center; max-width:640px; margin:0 auto 40px; }
+.demo-stage{ position:relative; max-width:920px; margin:0 auto; }
+.demo-devices{ display:flex; align-items:flex-end; justify-content:center; gap:0; }
+.laptop{
+  width: min(720px, 92vw);
+  background:#0e0c09; border-radius:12px 12px 0 0; padding:12px 12px 0;
+  box-shadow: 0 40px 70px -20px rgba(0,0,0,0.35);
+}
+.laptop-screen{ background:var(--bg-paper); border-radius:4px; overflow:hidden; aspect-ratio:16/10; padding:20px; position:relative; }
+.laptop-base{ height:14px; background:#0e0c09; border-radius:0 0 8px 8px; margin-top:0; }
+.callout{
+  position:absolute;
+  font-family:var(--font-mono);
+  font-size:11px;
+  background: var(--ink);
+  color: var(--bg-paper);
+  padding:6px 10px;
+  border-radius:20px;
+  white-space:nowrap;
+  box-shadow:0 8px 16px rgba(0,0,0,0.18);
+}
+.callout::before{ content:''; position:absolute; width:6px; height:6px; background:var(--gold); border-radius:50%; left:-3px; top:50%; transform:translateY(-50%); }
+.demo-app-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:16px; height:100%; }
+.demo-side{ display:flex; flex-direction:column; gap:10px; }
+.demo-pot{ border:1px solid var(--ink-15); border-radius:4px; padding:10px; background:rgba(255,255,255,0.5); }
+.demo-pot-label{ font-size:9px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-50); font-weight:700;}
+.demo-pot-val{ font-family:var(--font-mono); font-weight:700; font-size:15px; margin-top:4px; }
+.demo-receipt-mini{ border:1px solid var(--ink-15); border-radius:4px; padding:14px; background:#fffdf8; }
+.demo-receipt-mini .receipt-row{ font-size:12px; padding:6px 0;}
+.demo-under{ margin-top:30px; text-align:center; font-family:var(--font-display); font-style:italic; font-size:19px; }
+.demo-under b{ font-style:normal; color:var(--petrol); }
+
+.timer-wrap{ text-align:center; }
+.timer-num{ font-family:var(--font-mono); font-weight:700; font-size: clamp(64px, 16vw, 130px); line-height:0.9; letter-spacing:-0.02em; }
+.timer-title{ margin-top:10px; max-width:600px; margin-left:auto; margin-right:auto; }
+.timer-list{ list-style:none; margin:36px auto 0; max-width:380px; text-align:left; display:flex; flex-direction:column; gap:10px; }
+.timer-list li{ font-size:15.5px; display:flex; gap:10px; align-items:baseline; }
+.timer-list li::before{ content:'—'; font-family:var(--font-mono); color:var(--ink-70); flex-shrink:0; }
+.timer-final{ margin-top:34px; font-family:var(--font-display); font-weight:600; font-size:clamp(20px,3.6vw,28px); line-height:1.3; }
+.timer-cta{ margin-top:30px; }
+.btn-on-gold{ background:var(--ink); color:var(--bg-paper); }
+.btn-on-gold:hover{ background:#000; box-shadow:0 8px 20px rgba(0,0,0,0.25); }
+
+.deliver-head{ text-align:center; max-width:680px; margin:0 auto 44px; }
+.deliver-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+@media(min-width:800px){ .deliver-grid{ grid-template-columns: repeat(3,1fr); } }
+.deliver-card{ background:rgba(255,255,255,0.5); border:1px solid var(--ink-15); padding:28px 24px; position:relative; }
+.deliver-card.primary{ border-color:var(--petrol); }
+.deliver-tag{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--petrol); font-weight:700; }
+.deliver-title{ font-family:var(--font-display); font-weight:600; font-size:21px; margin-top:12px; }
+.deliver-desc{ margin-top:10px; font-size:14px; line-height:1.55; color:var(--ink-70); }
+.plus-sign{ text-align:center; font-family:var(--font-display); font-size:22px; color:var(--ink-50); display:none; }
+@media(min-width:800px){ .deliver-grid{ align-items:center; } }
+
+.offer-panel{
+  margin-top:56px;
+  background: var(--ink);
+  color: var(--bg-paper);
+  padding:36px 28px;
+  display:flex; flex-direction:column; gap:24px; align-items:center; text-align:center;
+}
+@media(min-width:760px){ .offer-panel{ flex-direction:row; justify-content:space-between; text-align:left; padding:40px 48px; } }
+.offer-panel-price{ display:flex; flex-direction:column; gap:8px; align-items:center; }
+@media(min-width:760px){ .offer-panel-price{ align-items:flex-start; } }
+.save-chip{ font-family:var(--font-mono); font-size:12px; background:var(--petrol); color:#fff; padding:5px 10px; border-radius:20px; display:inline-block; }
+
+.compare-head{ text-align:center; max-width:600px; margin:0 auto 40px; }
+.compare-table{ max-width:760px; margin:0 auto; border:1px solid var(--ink-15); }
+.compare-row{ display:grid; grid-template-columns:1fr 1fr; }
+.compare-row + .compare-row{ border-top:1px solid var(--ink-15); }
+.compare-cell{ padding:16px 18px; font-size:14.5px; line-height:1.4; }
+.compare-cell.no{ color:var(--ink-50); border-right:1px solid var(--ink-15); }
+.compare-cell.no::before{ content:'✕  '; color:var(--ink-50); font-family:var(--font-mono); }
+.compare-cell.yes{ color:var(--ink); font-weight:600; }
+.compare-cell.yes::before{ content:'✓  '; color:var(--petrol); font-family:var(--font-mono); }
+.compare-header{ display:grid; grid-template-columns:1fr 1fr; font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-align:center; background:var(--bg-paper-2); }
+.compare-header div{ padding:12px; }
+.compare-header div:first-child{ border-right:1px solid var(--ink-15); color:var(--ink-50); }
+.compare-header div:last-child{ color:var(--petrol); font-weight:700; }
+.compare-close{ text-align:center; margin-top:36px; font-family:var(--font-display); font-size: clamp(19px,3.4vw,24px); line-height:1.4; }
+.compare-close b{ color:var(--petrol); font-style:italic; font-weight:500; }
+
+.decision-wrap{ display:flex; justify-content:center; }
+.big-receipt{
+  width:100%; max-width:440px;
+  background:#fffdf8; color:var(--ink);
+  padding:34px 30px;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+}
+.big-receipt-head{ text-align:center; font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-50); padding-bottom:16px; border-bottom:1px dashed var(--ink-15); }
+.big-receipt .receipt-row{ font-size:14px; }
+.big-receipt .discount-row span:last-child{ color:var(--petrol); }
+.big-receipt .receipt-total{ font-size:26px; }
+.big-receipt-foot{ margin-top:18px; text-align:center; font-family:var(--font-mono); font-size:11.5px; color:var(--ink-50); letter-spacing:0.06em; }
+.decision-copy{ text-align:center; max-width:640px; margin:40px auto 0; }
+.decision-copy p{ font-size:16px; line-height:1.6; color:var(--paper-on-dark); }
+.decision-copy p + p{ margin-top:10px; font-weight:600; color:var(--bg-paper); }
+.decision-cta{ text-align:center; margin-top:32px; }
+.decision-cta .btn{ font-size:17px; padding:20px 34px; }
+.decision-micro{ margin-top:14px; font-size:12.5px; color:var(--paper-on-dark-60); }
+
+.guarantee-wrap{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:22px; max-width:560px; margin:0 auto; }
+.guarantee-seal{
+  width:120px; height:120px; border-radius:50%;
+  border:2px solid var(--petrol);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--petrol);
+  line-height:1.3; text-align:center;
+}
+.guarantee-seal b{ font-family:var(--font-display); font-size:26px; display:block; font-weight:700; letter-spacing:-0.02em; }
+
+.faq-head{ text-align:center; max-width:520px; margin:0 auto 40px; }
+.accordion{ max-width:720px; margin:0 auto; border-top:1px solid var(--ink-15); }
+.accordion-item{ border-bottom:1px solid var(--ink-15); }
+.accordion-trigger{
+  width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:20px 4px; text-align:left; font-family:var(--font-display); font-weight:600; font-size:17px;
+}
+.accordion-icon{ font-family:var(--font-mono); font-size:18px; color:var(--petrol); flex-shrink:0; transition:transform .3s ease; }
+.accordion-item.open .accordion-icon{ transform:rotate(45deg); }
+.accordion-panel{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.accordion-panel-inner{ padding:0 4px 20px; font-size:14.5px; line-height:1.6; color:var(--ink-70); max-width:600px; }
+
+.final-cta{ text-align:center; }
+.final-cta .h2{ font-size:clamp(26px,5.6vw,42px); max-width:760px; margin:0 auto; }
+.final-pause{ margin:20px 0; font-family:var(--font-mono); font-size:13px; color:var(--paper-on-dark-60); letter-spacing:0.1em; }
+.final-cta .h2-lead{ margin:0 auto; }
+.final-product-line{ margin-top:40px; font-family:var(--font-display); font-size:22px; font-weight:600; }
+.final-product-sub{ margin-top:6px; font-size:14px; color:var(--paper-on-dark-60); }
+.final-price{ margin-top:18px; }
+.final-cta-btn{ margin-top:30px; }
+
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:50;
+  background: var(--ink);
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:12px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  transform: translateY(110%);
+  transition: transform .35s ease;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.25);
+}
+.sticky-cta.visible{ transform: translateY(0); }
+.sticky-cta.hide-for-cta{ transform: translateY(110%); }
+.sticky-price{ color:var(--bg-paper); }
+.sticky-price .amt{ font-family:var(--font-mono); font-weight:700; font-size:18px; color:var(--gold); }
+.sticky-price .lbl{ font-size:10.5px; color:var(--paper-on-dark-60); }
+.sticky-cta .btn{ padding:12px 18px; font-size:13.5px; white-space:nowrap; }
+@media(min-width:900px){ .sticky-cta{ display:none; } }
+
+footer{ background:var(--ink); color:var(--paper-on-dark-60); padding:32px 0; text-align:center; font-size:12.5px; }
+footer a{ text-decoration:underline; }
+
+.center{ text-align:center; }
+.mx-auto{ margin-left:auto; margin-right:auto; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">Plano<span>UP</span></div>
+    <div class="header-price">Hoje: <b>R$ 24,90</b></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow hero-eyebrow reveal">PLANOUP APRESENTA</div>
+      <h1 class="reveal reveal-delay-1">SEU DINHEIRO NÃO SOME.<br>VOCÊ SÓ AINDA NÃO VIU<br><em>PARA ONDE ELE ESTÁ INDO.</em></h1>
+      <p class="hero-sub reveal reveal-delay-2">Descubra em cerca de 25 minutos quanto realmente vai para o essencial, estilo de vida e futuro — e encontre gastos que podem estar passando despercebidos todos os meses.</p>
+      <p class="hero-micro reveal reveal-delay-2">Sem planilha complicada. Sem aula de finanças. Você coloca os números. A ferramenta faz as contas.</p>
+
+      <div class="hero-cta-block reveal reveal-delay-3">
+        <div class="price-badge on-dark">
+          <span class="price-tag-label">Oferta promocional</span>
+          <span class="price-old">R$ 89,90</span>
+          <span class="price-new">R$ 24,90</span>
+          <span class="price-micro">Pagamento único • Acesso imediato</span>
+        </div>
+        <a href="#" class="btn btn-gold btn-block" data-cta>QUERO ORGANIZAR MEU DINHEIRO →</a>
+      </div>
+    </div>
+
+    <div class="mock-stage reveal reveal-delay-2">
+      <svg class="mock-receipt-back" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="280" fill="#F6F1E6"/></svg>
+      <svg class="mock-receipt-back-2" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="280" fill="#F6F1E6"/></svg>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mockup-app-eyebrow">PAINEL PLANOUP</div>
+          <div class="mockup-app-title">Seus 3 potes</div>
+          <div class="pot-row">
+            <div class="pot essencial"><div class="pot-label">Essencial</div><div class="pot-value" data-count="2140">R$ 0</div></div>
+            <div class="pot estilo"><div class="pot-label">Estilo</div><div class="pot-value" data-count="890">R$ 0</div></div>
+            <div class="pot futuro"><div class="pot-label">Futuro</div><div class="pot-value" data-count="560">R$ 0</div></div>
+          </div>
+          <div class="mini-receipt">
+            <div class="mini-receipt-row"><span>Streaming</span><span>R$ 39,90</span></div>
+            <div class="mini-receipt-row"><span>Assinaturas</span><span>R$ 59,90</span></div>
+            <div class="mini-receipt-row"><span>Delivery</span><span>R$ 82,40</span></div>
+            <div class="mini-receipt-total"><span>Total do mês</span><span>R$ 3.590,00</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:14px; font-size:11.5px; color:var(--paper-on-dark-60);">* interface ilustrativa — substitua pelos prints reais do sistema</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap pain-grid">
+    <div class="pain-copy reveal">
+      <div class="h2">O problema talvez não seja<br>quanto você ganha.</div>
+      <div class="h2-lead underline-draw">É não saber exatamente para onde está indo.</div>
+      <p class="pain-note">Pequenos gastos parecem pequenos quando aparecem separados.<br><strong>Quando você coloca tudo na mesma tela, a história pode mudar.</strong></p>
+      <span class="pain-tag">É exatamente isso que o PlanoUP faz</span>
+    </div>
+    <div class="receipt reveal reveal-delay-1">
+      <div class="receipt-head">Seu mês — exemplo ilustrativo</div>
+      <div class="receipt-row"><span>Streaming</span><span>R$ 39,90</span></div>
+      <div class="receipt-row"><span>Aplicativos</span><span>R$ 24,90</span></div>
+      <div class="receipt-row"><span>Delivery</span><span>R$ 82,40</span></div>
+      <div class="receipt-row"><span>Academia</span><span>R$ 89,90</span></div>
+      <div class="receipt-row"><span>Assinaturas</span><span>R$ 59,90</span></div>
+      <div class="receipt-row"><span>Outros</span><span>R$ 139,90</span></div>
+      <div class="receipt-total"><span>TOTAL</span><span>R$ 436,90</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="wrap break-block">
+    <div class="h2 reveal">VOCÊ NÃO PRECISA<br>PARAR DE VIVER.</div>
+    <div class="h2-lead reveal reveal-delay-1">PRECISA ENXERGAR.</div>
+    <p class="break-copy reveal reveal-delay-2">O objetivo não é fazer você se sentir culpado por pedir um delivery ou assinar um streaming. É permitir que você decida conscientemente onde seu dinheiro deve ficar.</p>
+    <p class="break-highlight reveal reveal-delay-2">Controle não é cortar tudo.<br>É escolher.</p>
+  </div>
+</section>
+
+<section class="section-paper2">
+  <div class="wrap">
+    <div class="steps-head reveal">
+      <div class="eyebrow" style="color:var(--petrol)">CHEGA DE TEORIA</div>
+      <div class="h2" style="margin-top:10px;">Abra. Preencha. Entenda.</div>
+      <p class="lede">Uma ferramenta visual criada para transformar seus números em decisões.</p>
+    </div>
+    <div class="steps-rail">
+      <div class="steps-rail-line"></div>
+      <div class="steps-grid">
+        <div class="step-card reveal"><div class="step-num">01 — PAINEL</div><div class="step-title">Organize</div><p class="step-desc">Informe sua renda e organize seu dinheiro entre Essencial, Estilo de Vida e Futuro.</p></div>
+        <div class="step-card reveal reveal-delay-1"><div class="step-num">02 — GASTOS</div><div class="step-title">Preencha</div><p class="step-desc">Coloque seus gastos na tela e veja o peso de cada categoria.</p></div>
+        <div class="step-card reveal reveal-delay-2"><div class="step-num">03 — VAZAMENTOS</div><div class="step-title">Identifique</div><p class="step-desc">Encontre assinaturas e despesas recorrentes que merecem uma segunda olhada.</p></div>
+        <div class="step-card reveal reveal-delay-3"><div class="step-num">04 — CHECKLIST</div><div class="step-title">Aja</div><p class="step-desc">Transforme o diagnóstico em ações práticas para os próximos 30 dias.</p></div>
+      </div>
+    </div>
+    <div class="flow-line reveal">RENDA → GASTOS → VAZAMENTOS → PLANO</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="demo-head reveal">
+      <div class="h2">Não estamos vendendo uma planilha.</div>
+      <div class="h2-lead underline-draw">ISTO É O QUE VOCÊ VAI USAR.</div>
+    </div>
+    <div class="demo-stage reveal reveal-delay-1">
+      <div class="demo-devices">
+        <div class="laptop">
+          <div class="laptop-screen">
+            <div class="demo-app-grid">
+              <div class="demo-side">
+                <div class="demo-pot"><div class="demo-pot-label">Essencial</div><div class="demo-pot-val">R$ 2.140</div></div>
+                <div class="demo-pot"><div class="demo-pot-label">Estilo de vida</div><div class="demo-pot-val">R$ 890</div></div>
+                <div class="demo-pot"><div class="demo-pot-label">Futuro</div><div class="demo-pot-val">R$ 560</div></div>
+              </div>
+              <div class="demo-receipt-mini">
+                <div class="receipt-row"><span>Streaming</span><span>R$ 39,90</span></div>
+                <div class="receipt-row"><span>Delivery</span><span>R$ 82,40</span></div>
+                <div class="receipt-row"><span>Assinaturas</span><span>R$ 59,90</span></div>
+                <div class="receipt-total" style="font-size:13px;"><span>Total</span><span>R$ 3.590,00</span></div>
+              </div>
+            </div>
+            <div class="callout" style="top:14%; left:6%;">Cálculo automático</div>
+            <div class="callout" style="top:34%; left:6%;">3 potes</div>
+            <div class="callout" style="top:54%; right:6%;">Gastos organizados</div>
+            <div class="callout" style="bottom:8%; right:6%;">Vazamentos</div>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+      </div>
+      <p class="center" style="font-size:11.5px; color:var(--ink-50); margin-top:12px;">* interface ilustrativa — substitua pelos prints reais do sistema</p>
+    </div>
+    <p class="demo-under reveal">Você coloca seus números. <b>O PlanoUP organiza a visão.</b></p>
+  </div>
+</section>
+
+<section class="section-gold">
+  <div class="wrap timer-wrap">
+    <div class="timer-num reveal">25:00</div>
+    <div class="h2 timer-title reveal reveal-delay-1">Quanto vale finalmente entender o seu próprio dinheiro?</div>
+    <ul class="timer-list reveal reveal-delay-2">
+      <li>Separe cerca de 25 minutos.</li>
+      <li>Coloque sua renda.</li>
+      <li>Adicione seus gastos.</li>
+      <li>Revise suas assinaturas.</li>
+      <li>Organize seus 3 potes.</li>
+      <li>Saia com um plano.</li>
+    </ul>
+    <p class="timer-final reveal reveal-delay-2">Talvez você tenha adiado isso por meses.<br>Você pode começar hoje.</p>
+    <div class="timer-cta reveal">
+      <a href="#" class="btn btn-on-gold" data-cta>COMEÇAR MEUS 25 MINUTOS →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-paper2">
+  <div class="wrap">
+    <div class="deliver-head reveal">
+      <div class="h2">Tudo que você precisa para sair do<br>“eu acho” e chegar no “agora eu sei”.</div>
+    </div>
+    <div class="deliver-grid">
+      <div class="deliver-card primary reveal">
+        <div class="deliver-tag">Principal ferramenta</div>
+        <div class="deliver-title">Painel Interativo</div>
+        <p class="deliver-desc">Ferramenta online com cálculos automáticos para organizar renda, gastos e os 3 potes.</p>
+      </div>
+      <div class="deliver-card reveal reveal-delay-1">
+        <div class="deliver-tag">Material complementar</div>
+        <div class="deliver-title">Ebook</div>
+        <p class="deliver-desc">Entenda o método por trás da ferramenta e continue aplicando a organização.</p>
+      </div>
+      <div class="deliver-card reveal reveal-delay-2">
+        <div class="deliver-tag">Ação prática</div>
+        <div class="deliver-title">Planner de 30 Dias</div>
+        <p class="deliver-desc">Um plano prático para transformar o diagnóstico em rotina.</p>
+      </div>
+    </div>
+
+    <div class="offer-panel reveal">
+      <div class="offer-panel-price">
+        <span class="price-tag-label" style="color:var(--gold)">Painel + Ebook + Planner</span>
+        <span class="price-old" style="color:var(--paper-on-dark-60); text-decoration-color:var(--paper-on-dark-60);">De R$ 89,90</span>
+        <span class="price-new" style="color:var(--bg-paper);">R$ 24,90</span>
+        <span class="save-chip">ECONOMIZE R$ 65,00</span>
+      </div>
+      <a href="#" class="btn btn-gold" data-cta>QUERO APROVEITAR POR R$ 24,90 →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="compare-head reveal">
+      <div class="h2">Você pode continuar tentando<br>organizar tudo de cabeça.</div>
+    </div>
+    <div class="compare-table reveal reveal-delay-1">
+      <div class="compare-header"><div>Sem PlanoUP</div><div>Com PlanoUP</div></div>
+      <div class="compare-row"><div class="compare-cell no">"Eu acho que gasto..."</div><div class="compare-cell yes">Eu consigo visualizar meus gastos</div></div>
+      <div class="compare-row"><div class="compare-cell no">"Depois eu vejo isso"</div><div class="compare-cell yes">Plano de 30 dias</div></div>
+      <div class="compare-row"><div class="compare-cell no">Várias contas separadas</div><div class="compare-cell yes">Tudo organizado visualmente</div></div>
+      <div class="compare-row"><div class="compare-cell no">Assinaturas esquecidas</div><div class="compare-cell yes">Gastos recorrentes para revisar</div></div>
+      <div class="compare-row"><div class="compare-cell no">Planilha complicada</div><div class="compare-cell yes">Painel visual</div></div>
+    </div>
+    <p class="compare-close reveal reveal-delay-2">A diferença não é ganhar mais amanhã.<br><b>É entender melhor o que você já tem hoje.</b></p>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="wrap">
+    <div class="decision-wrap reveal">
+      <div class="big-receipt">
+        <div class="big-receipt-head">Recibo PlanoUP</div>
+        <div class="receipt-row"><span>Painel interativo</span><span>INCLUSO</span></div>
+        <div class="receipt-row"><span>Ebook</span><span>INCLUSO</span></div>
+        <div class="receipt-row"><span>Planner 30 dias</span><span>INCLUSO</span></div>
+        <div class="receipt-row"><span>Valor normal</span><span>R$ 89,90</span></div>
+        <div class="receipt-row discount-row"><span>Desconto promocional</span><span>− R$ 65,00</span></div>
+        <div class="receipt-total"><span>TOTAL HOJE</span><span>R$ 24,90</span></div>
+        <div class="big-receipt-foot">PAGAMENTO ÚNICO · ACESSO IMEDIATO</div>
+      </div>
+    </div>
+    <div class="decision-copy reveal reveal-delay-1">
+      <p>Você provavelmente já gastou R$ 24,90 em algo que nem lembra.</p>
+      <p>Desta vez, use R$ 24,90 para entender melhor para onde os próximos estão indo.</p>
+    </div>
+    <div class="decision-cta reveal reveal-delay-2">
+      <a href="#" class="btn btn-gold" data-cta>SIM, QUERO ACESSAR POR R$ 24,90 →</a>
+      <div class="decision-micro">Compra segura • Acesso imediato</div>
+    </div>
+  </div>
+</section>
+
+<section id="guarantee-section">
+  <div class="wrap guarantee-wrap reveal">
+    <div class="guarantee-seal"><b>7</b>DIAS DE<br>GARANTIA</div>
+    <div class="h2">Teste. Use. Decida depois.</div>
+    <p class="lede mx-auto">Entre na ferramenta, faça seu diagnóstico e conheça o método. Se estiver dentro das condições da garantia e você decidir que não é para você, solicite o reembolso dentro do prazo aplicável.</p>
+  </div>
+</section>
+
+<section class="section-paper2">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <div class="h2">Perguntas frequentes</div>
+    </div>
+    <div class="accordion reveal reveal-delay-1">
+      <div class="accordion-item">
+        <button class="accordion-trigger">Isso é uma planilha?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">Não. É uma ferramenta online interativa com cálculos automáticos.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Preciso entender de finanças?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">Não. O produto foi criado justamente para quem quer uma forma simples de visualizar o próprio dinheiro.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Quanto tempo demora?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">O fluxo foi desenvolvido para ser concluído em cerca de 25 minutos, embora o tempo possa variar conforme a quantidade de informações que você adicionar.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Funciona no celular?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">Sim, o painel é totalmente responsivo e funciona no celular, tablet e computador.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Existe mensalidade?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">Não. O valor de R$ 24,90 é um pagamento único.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Vou receber o quê?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">Painel interativo + ebook + planner de 30 dias.</div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Meus dados ficam salvos?<span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">[Descrever aqui, de acordo com a implementação real do sistema, como e onde os dados informados pelo usuário ficam salvos.]</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark final-cta">
+  <div class="wrap">
+    <div class="h2 reveal">DAQUI A 25 MINUTOS,<br>VOCÊ PODE CONTINUAR SE PERGUNTANDO<br>PARA ONDE SEU DINHEIRO FOI.</div>
+    <div class="final-pause reveal reveal-delay-1">— ou —</div>
+    <div class="h2-lead reveal reveal-delay-1">OU PODE DESCOBRIR.</div>
+
+    <div class="final-product-line reveal reveal-delay-2">Controle Seu Dinheiro em 25 Minutos</div>
+    <div class="final-product-sub reveal reveal-delay-2">Painel + Ebook + Planner</div>
+
+    <div class="final-price reveal reveal-delay-2">
+      <div class="price-badge on-dark" style="align-items:center;">
+        <span class="price-tag-label">Oferta promocional</span>
+        <span class="price-old">R$ 89,90</span>
+        <span class="price-new">R$ 24,90</span>
+      </div>
+    </div>
+
+    <div class="final-cta-btn reveal reveal-delay-3">
+      <a href="#" class="btn btn-gold" data-cta>QUERO COMEÇAR AGORA →</a>
+      <div class="decision-micro" style="margin-top:14px;">Pagamento único • Acesso imediato</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">PlanoUP — Controle Seu Dinheiro em 25 Minutos</div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-price"><div class="amt">R$ 24,90</div><div class="lbl">pagamento único</div></div>
+  <a href="#" class="btn btn-gold" data-cta>COMEÇAR AGORA →</a>
+</div>
+
+<script>
+const CHECKOUT_URL = "https://pay.kirvano.com/f2a9d7fc-20d1-493a-8999-e5e35d0e9408";
+const META_PIXEL_ID = "INSERIR_META_PIXEL_ID";
+
+function trackEvent(name){
+  if (window.fbq) { window.fbq('track', name); }
+}
+trackEvent('PageView');
+
+let viewContentFired = false;
+const offerObserverTarget = document.querySelector('.offer-panel') || document.querySelector('.decision-wrap');
+if (offerObserverTarget && 'IntersectionObserver' in window){
+  const vcObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !viewContentFired){
+        trackEvent('ViewContent');
+        viewContentFired = true;
+        vcObserver.disconnect();
+      }
+    });
+  }, {threshold:0.4});
+  vcObserver.observe(offerObserverTarget);
+}
+
+document.querySelectorAll('[data-cta]').forEach(el=>{
+  el.setAttribute('href', CHECKOUT_URL);
+  el.addEventListener('click', ()=> trackEvent('InitiateCheckout'));
+});
+
+const revealEls = document.querySelectorAll('.reveal, .underline-draw, .receipt-row');
+if ('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+  revealEls.forEach(el=>io.observe(el));
+} else {
+  revealEls.forEach(el=>el.classList.add('in-view'));
+}
+
+document.querySelectorAll('.receipt, .big-receipt').forEach(receipt=>{
+  const rows = receipt.querySelectorAll('.receipt-row');
+  rows.forEach((row,i)=>{ row.style.transitionDelay = (i*0.06)+'s'; });
+});
+
+document.querySelectorAll('.pot-value[data-count]').forEach(el=>{
+  const target = parseInt(el.getAttribute('data-count'),10);
+  let started = false;
+  const io2 = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !started){
+        started = true;
+        let cur = 0;
+        const step = Math.max(1, Math.round(target/24));
+        const t = setInterval(()=>{
+          cur += step;
+          if(cur>=target){ cur=target; clearInterval(t); }
+          el.textContent = 'R$ ' + cur.toLocaleString('pt-BR');
+        }, 20);
+        io2.disconnect();
+      }
+    });
+  }, {threshold:0.4});
+  io2.observe(el);
+});
+
+document.querySelectorAll('.accordion-trigger').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = btn.closest('.accordion-item');
+    const panel = item.querySelector('.accordion-panel');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item.open').forEach(other=>{
+      if(other!==item){
+        other.classList.remove('open');
+        other.querySelector('.accordion-panel').style.maxHeight = null;
+      }
+    });
+    if(isOpen){
+      item.classList.remove('open');
+      panel.style.maxHeight = null;
+    } else {
+      item.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+
+const stickyCta = document.getElementById('stickyCta');
+const heroEl = document.querySelector('.hero');
+const finalCtaEl = document.querySelector('.final-cta');
+if (stickyCta && heroEl){
+  const heroBottom = ()=> heroEl.getBoundingClientRect().bottom;
+  window.addEventListener('scroll', ()=>{
+    const pastHero = heroBottom() < 0;
+    stickyCta.classList.toggle('visible', pastHero);
+    if(finalCtaEl){
+      const finalRect = finalCtaEl.getBoundingClientRect();
+      const finalVisible = finalRect.top < window.innerHeight * 0.7;
+      stickyCta.classList.toggle('hide-for-cta', finalVisible);
+    }
+  }, {passive:true});
+}
+</script>
+</body>
+</html>
