@@ -539,6 +539,7 @@ section{ padding: 64px 0; }
 .plan-sparkle-list{ list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
 .plan-sparkle-list li{ display:flex; align-items:flex-start; gap:8px; font-size:13px; line-height:1.45; color:var(--paper-on-dark); }
 .plan-sparkle-list li::before{ content:'✦'; color:var(--gold); flex-shrink:0; }
+.plan-sparkle-list li.featured-item{ font-weight:700; color:var(--gold); }
 
 .plan-price-block{ margin-top:28px; text-align:center; }
 .plan-price-block .price-old{ display:block; }
@@ -818,6 +819,11 @@ footer a{ text-decoration:underline; }
       <p class="lede mx-auto">Além do painel, ebook e planner, o plano Controle Total inclui um kit completo pra sair do "eu acho" e ir direto pra "eu sei exatamente quanto tenho".</p>
     </div>
     <div class="premium-grid">
+      <div class="premium-card premium-bonus reveal">
+        <span class="premium-tag">Novo recurso</span>
+        <div class="premium-title">🛒 Decisão de Compra Inteligente</div>
+        <p class="premium-desc">Antes de comprar, descubra se aquilo realmente cabe na sua vida financeira e veja o impacto nas suas metas.</p>
+      </div>
       <div class="premium-card reveal">
         <span class="premium-tag">Incluso no Controle Total</span>
         <div class="premium-title">Kit "Conte até os Centavos"</div>
@@ -878,6 +884,8 @@ footer a{ text-decoration:underline; }
       </div>
     </div>
 
+    <p class="compare-close reveal">O Básico mostra para onde seu dinheiro está indo.<br><b>O Controle Total ajuda você a decidir o que fazer com ele.</b></p>
+
     <div class="plans-grid reveal reveal-delay-3">
       <div class="plan-card">
         <div class="plan-eyebrow">Plano Básico</div>
@@ -912,6 +920,7 @@ footer a{ text-decoration:underline; }
           <div class="plan-highlight-title">+ CONTROLE TOTAL</div>
           <p class="plan-highlight-desc">O pacote completo pra quem quer resultado rápido e constância no longo prazo.</p>
           <ul class="plan-sparkle-list">
+            <li class="featured-item">🛒 Decisão de Compra Inteligente — veja se cabe no seu orçamento antes de comprar</li>
             <li>Kit "Conte até os Centavos" completo (ebook de 15 páginas + planner de 30 dias + guia de início rápido)</li>
             <li>3 planilhas de metas de economia (Básico, Intermediário, Avançado)</li>
             <li>Planilha "Sai do Vermelho" (quitação de dívidas)</li>
