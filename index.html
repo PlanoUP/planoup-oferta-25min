@@ -61,11 +61,11 @@ a{color:inherit; text-decoration:none;}
 /* rounded "card-soft" treatment, matching the reference layout's rounded
    cards/pill buttons/circle badges instead of the old sharp receipt edges */
 .receipt, .big-receipt, .teaser-card, .premium-card, .deliver-card,
-.problem-card, .step-card, .demo-receipt-mini, .accordion-item,
+.problem-card, .step-card, .accordion-item,
 .compare-table, .chip, .problem-list li, .negative-list li {
   border-radius: var(--radius);
 }
-.chip, .problem-list li, .negative-list li, .demo-pot { border-radius: 12px; }
+.chip, .problem-list li, .negative-list li { border-radius: 12px; }
 .premium-card { border-radius: 14px; }
 .compare-table{ overflow:hidden; }
 
@@ -213,6 +213,7 @@ a{color:inherit; text-decoration:none;}
 }
 .hero-demo-row{ margin-top:48px; }
 .hero-demo-image{ display:block; width:100%; height:auto; max-width:960px; margin:0 auto; }
+.feature-preview-image{ display:block; width:100%; height:auto; max-width:1000px; margin:0 auto; }
 .hero-checks-wrap{ margin-top:40px; }
 .hero-cta-wrap{ margin-top:44px; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
 .hero-eyebrow{ color: var(--gold); margin-bottom:18px; }
@@ -365,33 +366,7 @@ section{ padding: 64px 0; }
 
 .demo-head{ text-align:center; max-width:640px; margin:0 auto 40px; }
 .demo-stage{ position:relative; max-width:920px; margin:0 auto; }
-.demo-devices{ display:flex; align-items:flex-end; justify-content:center; gap:0; }
-.laptop{
-  width: min(720px, 92vw);
-  background:#0e0c09; border-radius:12px 12px 0 0; padding:12px 12px 0;
-  box-shadow: 0 40px 70px -20px rgba(0,0,0,0.35);
-}
-.laptop-screen{ background:var(--bg-paper); border-radius:4px; overflow:hidden; aspect-ratio:16/10; padding:20px; position:relative; }
-.laptop-base{ height:14px; background:#0e0c09; border-radius:0 0 8px 8px; margin-top:0; }
-.callout{
-  position:absolute;
-  font-family:var(--font-mono);
-  font-size:11px;
-  background: var(--ink);
-  color: var(--bg-paper);
-  padding:6px 10px;
-  border-radius:20px;
-  white-space:nowrap;
-  box-shadow:0 8px 16px rgba(0,0,0,0.18);
-}
-.callout::before{ content:''; position:absolute; width:6px; height:6px; background:var(--gold); border-radius:50%; left:-3px; top:50%; transform:translateY(-50%); }
-.demo-app-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:16px; height:100%; }
-.demo-side{ display:flex; flex-direction:column; gap:10px; }
-.demo-pot{ border:1px solid var(--ink-15); border-radius:4px; padding:10px; background:rgba(255,255,255,0.5); }
-.demo-pot-label{ font-size:9px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-50); font-weight:700;}
-.demo-pot-val{ font-family:var(--font-mono); font-weight:700; font-size:15px; margin-top:4px; }
-.demo-receipt-mini{ border:1px solid var(--ink-15); border-radius:4px; padding:14px; background:#fffdf8; }
-.demo-receipt-mini .receipt-row{ font-size:12px; padding:6px 0;}
+.demo-real-image{ display:block; width:100%; height:auto; }
 .demo-under{ margin-top:30px; text-align:center; font-family:var(--font-display); font-style:italic; font-size:19px; }
 .demo-under b{ font-style:normal; color:var(--petrol); }
 
@@ -717,31 +692,15 @@ footer a{ text-decoration:underline; }
       <div class="h2-lead underline-draw">ISTO É O QUE VOCÊ VAI USAR.</div>
     </div>
     <div class="demo-stage reveal reveal-delay-1">
-      <div class="demo-devices">
-        <div class="laptop">
-          <div class="laptop-screen">
-            <div class="demo-app-grid">
-              <div class="demo-side">
-                <div class="demo-pot"><div class="demo-pot-label">Essencial</div><div class="demo-pot-val">R$ 2.140</div></div>
-                <div class="demo-pot"><div class="demo-pot-label">Estilo de vida</div><div class="demo-pot-val">R$ 890</div></div>
-                <div class="demo-pot"><div class="demo-pot-label">Futuro</div><div class="demo-pot-val">R$ 560</div></div>
-              </div>
-              <div class="demo-receipt-mini">
-                <div class="receipt-row"><span>Streaming</span><span>R$ 39,90</span></div>
-                <div class="receipt-row"><span>Delivery</span><span>R$ 82,40</span></div>
-                <div class="receipt-row"><span>Assinaturas</span><span>R$ 59,90</span></div>
-                <div class="receipt-total" style="font-size:13px;"><span>Total</span><span>R$ 3.590,00</span></div>
-              </div>
-            </div>
-            <div class="callout" style="top:14%; left:6%;">Cálculo automático</div>
-            <div class="callout" style="top:34%; left:6%;">3 potes</div>
-            <div class="callout" style="top:54%; right:6%;">Gastos organizados</div>
-            <div class="callout" style="bottom:8%; right:6%;">Vazamentos</div>
-          </div>
-          <div class="laptop-base"></div>
-        </div>
-      </div>
-      <p class="center" style="font-size:11.5px; color:var(--ink-50); margin-top:12px;">* interface ilustrativa — substitua pelos prints reais do sistema</p>
+      <picture>
+        <source srcset="images/painel-real-preview.webp" type="image/webp">
+        <img
+          src="images/painel-real-preview.png"
+          alt="Painel PlanoUP: resumo do mês, mapa de gastos, evolução da economia e checklist financeiro"
+          class="demo-real-image"
+          width="1596" height="985"
+          loading="lazy">
+      </picture>
     </div>
     <p class="demo-under reveal">Você coloca seus números. <b>O PlanoUP organiza a visão.</b></p>
   </div>
@@ -763,6 +722,20 @@ footer a{ text-decoration:underline; }
     <div class="timer-cta reveal">
       <a href="#" class="btn btn-on-gold" data-cta>COMEÇAR MEUS 25 MINUTOS →</a>
     </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="wrap">
+    <picture>
+      <source srcset="images/decisao-compra-preview.webp" type="image/webp">
+      <img
+        src="images/decisao-compra-preview.png"
+        alt="Tela Vale a pena comprar isso agora, exclusiva do Controle Total: análise do impacto da compra no orçamento e nas metas"
+        class="feature-preview-image reveal"
+        width="1536" height="1024"
+        loading="lazy">
+    </picture>
   </div>
 </section>
 
