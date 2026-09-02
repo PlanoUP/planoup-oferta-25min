@@ -531,23 +531,45 @@ section{ padding: 64px 0; }
 .final-price{ margin-top:18px; }
 .final-cta-btn{ margin-top:30px; }
 
-.plans-grid{ display:grid; grid-template-columns:1fr; gap:20px; margin-top:56px; }
+.plans-grid{ display:grid; grid-template-columns:1fr; gap:24px; margin-top:56px; }
 @media(min-width:760px){ .plans-grid{ grid-template-columns:1fr 1fr; align-items:stretch; } }
-.plan-card{ position:relative; background:#fff; border:1px solid var(--ink-15); padding:34px 28px 28px; display:flex; flex-direction:column; }
-.plan-card.featured{ border:2px solid var(--gold); box-shadow:0 24px 50px -20px rgba(242,167,27,0.35); }
-.plan-badge{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--ink); font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:0.1em; padding:5px 14px; border-radius:20px; white-space:nowrap; }
-.plan-name{ font-family:var(--font-display); font-weight:600; font-size:22px; }
-.plan-desc{ margin-top:6px; font-size:13.5px; color:var(--ink-70); }
-.plan-price-row{ margin-top:20px; display:flex; flex-direction:column; gap:2px; }
-.plan-plus-tag{ margin-top:20px; font-family:var(--font-mono); font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--petrol); border-top:1px dashed var(--ink-15); padding-top:16px; }
-.plan-list{ list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:8px; flex:1; }
-.plan-list li{ font-size:13.5px; line-height:1.4; padding-left:18px; position:relative; color:var(--ink-70); }
-.plan-list li::before{ content:'✓'; position:absolute; left:0; color:var(--petrol); font-family:var(--font-mono); font-weight:700; }
-.plan-blurb{ margin-top:16px; font-size:13px; line-height:1.4; color:var(--ink-70); font-style:italic; }
-.plan-card .btn{ margin-top:20px; width:100%; }
-.plan-card:not(.featured) .btn{ background:transparent; border:1.5px solid var(--ink); color:var(--ink); }
-.plan-card:not(.featured) .btn:hover{ background:var(--ink); color:var(--bg-paper); }
-.plan-trust{ margin-top:10px; font-size:11.5px; color:var(--ink-50); text-align:center; }
+.plan-card{ position:relative; background:#fff; border:1px solid var(--ink-15); border-radius:24px; padding:36px 30px 32px; display:flex; flex-direction:column; }
+.plan-card.featured{ background:var(--ink); color:var(--bg-paper); border:2px solid var(--gold); box-shadow:0 30px 60px -22px rgba(0,0,0,0.45); }
+
+.plan-eyebrow{ font-family:var(--font-mono); font-size:11.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-50); text-align:center; }
+.plan-card.featured .plan-eyebrow{ color:var(--gold); font-size:13px; }
+.plan-badge{ position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--ink); font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:0.1em; padding:6px 16px; border-radius:999px; white-space:nowrap; }
+.plan-desc{ margin-top:10px; font-size:14px; line-height:1.5; text-align:center; color:var(--ink-70); }
+.plan-card.featured .plan-desc{ color:var(--paper-on-dark); }
+
+.plan-checks{ list-style:none; margin-top:26px; display:flex; flex-direction:column; gap:12px; }
+.plan-checks li{ display:flex; align-items:flex-start; gap:10px; font-size:14px; line-height:1.4; }
+.plan-check-icon{ flex-shrink:0; width:20px; height:20px; margin-top:1px; border-radius:50%; background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; }
+
+.plan-highlight{ margin-top:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(242,167,27,0.35); border-radius:16px; padding:20px 20px; }
+.plan-highlight-tag{ display:inline-block; background:var(--gold); color:var(--ink); font-family:var(--font-mono); font-size:10px; font-weight:700; letter-spacing:0.1em; padding:4px 12px; border-radius:999px; }
+.plan-highlight-title{ margin-top:10px; font-family:var(--font-display); font-weight:600; font-size:17px; color:var(--gold); }
+.plan-highlight-desc{ margin-top:8px; font-size:13px; line-height:1.45; color:var(--paper-on-dark-60); }
+.plan-sparkle-list{ list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+.plan-sparkle-list li{ display:flex; align-items:flex-start; gap:8px; font-size:13px; line-height:1.45; color:var(--paper-on-dark); }
+.plan-sparkle-list li::before{ content:'✦'; color:var(--gold); flex-shrink:0; }
+
+.plan-price-block{ margin-top:28px; text-align:center; }
+.plan-price-block .price-old{ display:block; }
+.plan-card.featured .plan-price-block .price-old{ color:var(--paper-on-dark-60); text-decoration-color:var(--paper-on-dark-60); }
+.plan-price-label{ display:block; margin-top:4px; font-family:var(--font-mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-50); }
+.plan-card.featured .plan-price-label{ color:var(--paper-on-dark-60); }
+.plan-price-block .price-new{ display:block; margin-top:6px; font-size:40px; }
+.plan-card.featured .plan-price-block .price-new{ color:var(--gold); }
+.plan-price-micro{ display:block; margin-top:4px; font-size:12px; color:var(--ink-50); }
+.plan-card.featured .plan-price-micro{ color:var(--paper-on-dark-60); }
+
+.plan-blurb{ margin-top:16px; font-size:13px; line-height:1.4; color:var(--ink-70); font-style:italic; text-align:center; }
+.plan-card.featured .plan-blurb{ color:var(--paper-on-dark); }
+.plan-card .btn{ margin-top:22px; width:100%; border-radius:999px; background:var(--gold); color:var(--ink); }
+.plan-card .btn:hover{ background:var(--gold-dark); }
+.plan-trust{ margin-top:12px; font-size:11.5px; color:var(--ink-50); text-align:center; }
+.plan-card.featured .plan-trust{ color:var(--paper-on-dark-60); }
 
 .sticky-cta{
   position:fixed; left:0; right:0; bottom:0; z-index:50;
@@ -859,41 +881,54 @@ footer a{ text-decoration:underline; }
 
     <div class="plans-grid reveal reveal-delay-3">
       <div class="plan-card">
-        <div class="plan-name">Básico</div>
-        <div class="plan-desc">Painel + Ebook + Planner de 30 Dias</div>
-        <div class="plan-price-row">
-          <span class="price-old">De R$ 59,90</span>
-          <span class="price-new">R$ 24,90</span>
-        </div>
-        <ul class="plan-list">
-          <li>Painel interativo completo</li>
-          <li>Ebook do método</li>
-          <li>Planner de 30 dias</li>
+        <div class="plan-eyebrow">Plano Básico</div>
+        <p class="plan-desc">O essencial pra enxergar com clareza pra onde vai o seu dinheiro.</p>
+        <ul class="plan-checks">
+          <li><span class="plan-check-icon">✓</span>Painel Interativo (acesso completo)</li>
+          <li><span class="plan-check-icon">✓</span>Ebook "Controle Seu Dinheiro em 25 Minutos"</li>
+          <li><span class="plan-check-icon">✓</span>Planner de 30 Dias</li>
         </ul>
+        <div class="plan-price-block">
+          <span class="price-old">De R$ 59,90</span>
+          <span class="plan-price-label">Por apenas</span>
+          <span class="price-new">R$ 24,90</span>
+          <span class="plan-price-micro">Pagamento único</span>
+        </div>
         <p class="plan-blurb">Pra quem já consegue juntar um pouco de dinheiro todo mês, mas quer clareza de verdade.</p>
         <a href="https://pay.kirvano.com/f2a9d7fc-20d1-493a-8999-e5e35d0e9408" class="btn" data-cta-plan="basico">Consigo juntar um pouco de dinheiro →</a>
-        <p class="plan-trust">Pagamento único • Acesso imediato</p>
+        <p class="plan-trust">Pagamento único, acesso imediato</p>
       </div>
 
       <div class="plan-card featured">
         <span class="plan-badge">MAIS COMPLETO</span>
-        <div class="plan-name">Controle Total</div>
-        <div class="plan-desc">Tudo do Básico + Controle Total</div>
-        <div class="plan-price-row">
-          <span class="price-old">De R$ 89,90</span>
-          <span class="price-new">R$ 37,00</span>
-        </div>
-        <div class="plan-plus-tag">+ CONTROLE TOTAL</div>
-        <ul class="plan-list">
-          <li>Kit "Conte até os Centavos"</li>
-          <li>3 planilhas de metas</li>
-          <li>Planilha "Sai do Vermelho"</li>
-          <li>Guia de Assinaturas</li>
-          <li>Guia + Simulador de Juros Compostos</li>
+        <div class="plan-eyebrow">Plano Controle Total</div>
+        <p class="plan-desc">Tudo do Básico + o pacote Controle Total</p>
+        <ul class="plan-checks">
+          <li><span class="plan-check-icon">✓</span>Painel Interativo (acesso completo)</li>
+          <li><span class="plan-check-icon">✓</span>Ebook "Controle Seu Dinheiro em 25 Minutos"</li>
+          <li><span class="plan-check-icon">✓</span>Planner de 30 Dias</li>
         </ul>
+        <div class="plan-highlight">
+          <span class="plan-highlight-tag">Controle Total</span>
+          <div class="plan-highlight-title">+ CONTROLE TOTAL</div>
+          <p class="plan-highlight-desc">O pacote completo pra quem quer resultado rápido e constância no longo prazo.</p>
+          <ul class="plan-sparkle-list">
+            <li>Kit "Conte até os Centavos" completo (ebook de 15 páginas + planner de 30 dias + guia de início rápido)</li>
+            <li>3 planilhas de metas de economia (Básico, Intermediário, Avançado)</li>
+            <li>Planilha "Sai do Vermelho" (quitação de dívidas)</li>
+            <li>"Guia de Assinaturas" (como identificar e cancelar gastos recorrentes esquecidos)</li>
+            <li>Guia + Simulador de Juros Compostos (como pequenas economias mensais crescem com o tempo)</li>
+          </ul>
+        </div>
+        <div class="plan-price-block">
+          <span class="price-old">De R$ 89,90</span>
+          <span class="plan-price-label">Por apenas</span>
+          <span class="price-new">R$ 37,00</span>
+          <span class="plan-price-micro">Pagamento único</span>
+        </div>
         <p class="plan-blurb">Pra quem está determinado a mudar de vida financeira de vez.</p>
         <a href="https://pay.kirvano.com/c415b5f7-f676-48de-b1c9-2f25defad2c5" class="btn btn-gold" data-cta-plan="premium">Quero juntar meus primeiros R$ 10 mil →</a>
-        <p class="plan-trust">Pagamento único • Acesso imediato</p>
+        <p class="plan-trust">Satisfação garantida • Compra segura • Privacidade protegida</p>
       </div>
     </div>
   </div>
