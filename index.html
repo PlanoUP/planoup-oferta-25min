@@ -230,6 +230,43 @@ a{color:inherit; text-decoration:none;}
 @media(min-width:520px){ .hero-cta-block .btn{ width:auto; } }
 .hero-guarantee-line{ font-size:12.5px; color:var(--paper-on-dark-60); }
 
+.hero-checks{ list-style:none; margin-top:28px; display:grid; grid-template-columns:1fr; gap:10px; }
+@media(min-width:520px){ .hero-checks{ grid-template-columns:1fr 1fr; } }
+.hero-checks li{ display:flex; align-items:flex-start; gap:9px; font-size:13.5px; line-height:1.35; color:var(--paper-on-dark); }
+.hero-checks li::before{ content:'✓'; color:var(--gold); font-family:var(--font-mono); font-weight:700; flex-shrink:0; }
+
+.teaser-card{ max-width:460px; margin:0 auto; background:#fff; border:1px solid var(--ink-15); padding:40px 32px; text-align:center; box-shadow:0 24px 50px -24px rgba(27,23,18,0.28); }
+.teaser-card .price-old{ display:block; }
+.teaser-card .eyebrow{ display:block; margin-top:8px; color:var(--petrol); }
+.teaser-card .price-new{ display:block; margin-top:8px; font-size:52px; }
+.teaser-card .price-micro{ margin-top:6px; }
+.teaser-card .btn{ margin-top:26px; width:100%; }
+.teaser-trust{ margin-top:18px; font-size:12px; color:var(--ink-50); }
+
+.problem-card{ margin-top:48px; background:rgba(255,255,255,0.5); border:1px solid var(--ink-15); padding:36px 28px; }
+.problem-card .h2{ text-align:center; }
+.problem-list{ list-style:none; margin:28px auto 0; display:grid; grid-template-columns:1fr; gap:10px; max-width:680px; }
+@media(min-width:640px){ .problem-list{ grid-template-columns:1fr 1fr; } }
+.problem-list li{ display:flex; align-items:flex-start; gap:10px; font-size:14px; line-height:1.4; background:rgba(179,65,47,0.06); border-left:2px solid #b3412f; padding:10px 12px; }
+.problem-list li::before{ content:'✕'; color:#b3412f; font-family:var(--font-mono); font-weight:700; flex-shrink:0; }
+
+.chip-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:40px; }
+@media(min-width:640px){ .chip-grid{ grid-template-columns:repeat(4,1fr); } }
+.chip{ background:rgba(255,255,255,0.6); border:1px solid var(--ink-15); padding:16px 14px; font-size:13px; font-weight:600; text-align:center; }
+
+.premium-grid{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:44px; }
+@media(min-width:700px){ .premium-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1000px){ .premium-grid{ grid-template-columns:repeat(3,1fr); } }
+.premium-card{ background:rgba(255,255,255,0.04); border:1px solid var(--paper-on-dark-30); padding:24px 22px; }
+.premium-card.premium-bonus{ background:rgba(242,167,27,0.08); border-color:rgba(242,167,27,0.35); }
+.premium-tag{ font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); font-weight:700; }
+.premium-title{ font-family:var(--font-display); font-weight:600; font-size:17px; margin-top:10px; color:var(--bg-paper); }
+.premium-desc{ margin-top:8px; font-size:13.5px; line-height:1.5; color:var(--paper-on-dark); }
+
+.negative-list{ list-style:none; max-width:420px; margin:28px auto 0; display:flex; flex-direction:column; gap:10px; }
+.negative-list li{ display:flex; align-items:center; gap:10px; font-size:14.5px; background:rgba(255,255,255,0.6); border:1px solid var(--ink-15); padding:10px 14px; }
+.negative-list li::before{ content:'✕'; color:#b3412f; font-family:var(--font-mono); font-weight:700; }
+
 .mock-stage{ position:relative; }
 .mock-receipt-back{
   position:absolute;
@@ -474,16 +511,16 @@ section{ padding: 64px 0; }
 .guarantee-seal b{ font-family:var(--font-display); font-size:26px; display:block; font-weight:700; letter-spacing:-0.02em; }
 
 .faq-head{ text-align:center; max-width:520px; margin:0 auto 40px; }
-.accordion{ max-width:720px; margin:0 auto; border-top:1px solid var(--ink-15); }
-.accordion-item{ border-bottom:1px solid var(--ink-15); }
+.accordion{ max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+.accordion-item{ border:1px solid var(--ink-15); background:rgba(255,255,255,0.6); }
 .accordion-trigger{
   width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;
-  padding:20px 4px; text-align:left; font-family:var(--font-display); font-weight:600; font-size:17px;
+  padding:18px 18px; text-align:left; font-family:var(--font-display); font-weight:600; font-size:16px;
 }
 .accordion-icon{ font-family:var(--font-mono); font-size:18px; color:var(--petrol); flex-shrink:0; transition:transform .3s ease; }
 .accordion-item.open .accordion-icon{ transform:rotate(45deg); }
 .accordion-panel{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
-.accordion-panel-inner{ padding:0 4px 20px; font-size:14.5px; line-height:1.6; color:var(--ink-70); max-width:600px; }
+.accordion-panel-inner{ padding:0 18px 20px; font-size:14.5px; line-height:1.6; color:var(--ink-70); max-width:600px; }
 
 .final-cta{ text-align:center; }
 .final-cta .h2{ font-size:clamp(26px,5.6vw,42px); max-width:760px; margin:0 auto; }
@@ -506,9 +543,11 @@ section{ padding: 64px 0; }
 .plan-list{ list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:8px; flex:1; }
 .plan-list li{ font-size:13.5px; line-height:1.4; padding-left:18px; position:relative; color:var(--ink-70); }
 .plan-list li::before{ content:'✓'; position:absolute; left:0; color:var(--petrol); font-family:var(--font-mono); font-weight:700; }
-.plan-card .btn{ margin-top:24px; width:100%; }
+.plan-blurb{ margin-top:16px; font-size:13px; line-height:1.4; color:var(--ink-70); font-style:italic; }
+.plan-card .btn{ margin-top:20px; width:100%; }
 .plan-card:not(.featured) .btn{ background:transparent; border:1.5px solid var(--ink); color:var(--ink); }
 .plan-card:not(.featured) .btn:hover{ background:var(--ink); color:var(--bg-paper); }
+.plan-trust{ margin-top:10px; font-size:11.5px; color:var(--ink-50); text-align:center; }
 
 .sticky-cta{
   position:fixed; left:0; right:0; bottom:0; z-index:50;
@@ -540,7 +579,7 @@ footer a{ text-decoration:underline; }
 <header class="site-header">
   <div class="wrap">
     <div class="logo">Plano<span>UP</span></div>
-    <div class="header-price">Hoje: <b>R$ 24,90</b></div>
+    <div class="header-price">A partir de <b>R$ 24,90</b></div>
   </div>
 </header>
 
@@ -554,13 +593,22 @@ footer a{ text-decoration:underline; }
 
       <div class="hero-cta-block reveal reveal-delay-3">
         <div class="price-badge on-dark">
-          <span class="price-tag-label">Oferta promocional</span>
-          <span class="price-old">R$ 89,90</span>
+          <span class="price-tag-label">A partir de</span>
+          <span class="price-old">R$ 59,90</span>
           <span class="price-new">R$ 24,90</span>
           <span class="price-micro">Pagamento único • Acesso imediato</span>
         </div>
         <a href="#" class="btn btn-gold btn-block" data-cta>QUERO ORGANIZAR MEU DINHEIRO →</a>
       </div>
+
+      <ul class="hero-checks reveal reveal-delay-3">
+        <li>Pagamento único, sem mensalidade</li>
+        <li>Acesso pelo computador e pelo celular</li>
+        <li>Painel com cálculos automáticos</li>
+        <li>Uso fácil, sem precisar entender de finanças</li>
+        <li>Acesso imediato após a compra</li>
+        <li>7 dias de garantia</li>
+      </ul>
     </div>
 
     <div class="mock-stage reveal reveal-delay-2">
@@ -590,6 +638,19 @@ footer a{ text-decoration:underline; }
 </section>
 
 <section>
+  <div class="wrap">
+    <div class="teaser-card reveal">
+      <span class="price-old">De R$ 59,90</span>
+      <span class="eyebrow">Por apenas</span>
+      <span class="price-new">R$ 24,90</span>
+      <p class="price-micro">Pagamento único, acesso imediato!</p>
+      <a href="#oferta" class="btn btn-gold" data-cta>Quero organizar meu dinheiro!</a>
+      <p class="teaser-trust">Satisfação garantida • Compra segura • Privacidade protegida</p>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap pain-grid">
     <div class="pain-copy reveal">
       <div class="h2">O problema talvez não seja<br>quanto você ganha.</div>
@@ -608,6 +669,20 @@ footer a{ text-decoration:underline; }
       <div class="receipt-total"><span>TOTAL</span><span>R$ 436,90</span></div>
     </div>
   </div>
+  <div class="wrap">
+    <div class="problem-card reveal reveal-delay-2">
+      <div class="h2">Sem controle, o dinheiro escorre sem você perceber.</div>
+      <p class="lede mx-auto" style="text-align:center;">Sem organização, é fácil perder de vista o que entra e o que sai — e acabar decidindo no escuro.</p>
+      <ul class="problem-list">
+        <li>Gastos que passam despercebidos todo mês</li>
+        <li>Assinaturas esquecidas cobrando sem parar</li>
+        <li>Decisões financeiras tomadas no escuro</li>
+        <li>Sensação de estar sempre apertado, mesmo ganhando bem</li>
+        <li>Dinheiro que devia render, mas não rende</li>
+        <li>Dificuldade real de priorizar o que importa</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section class="section-dark">
@@ -616,6 +691,25 @@ footer a{ text-decoration:underline; }
     <div class="h2-lead reveal reveal-delay-1">PRECISA ENXERGAR.</div>
     <p class="break-copy reveal reveal-delay-2">O objetivo não é fazer você se sentir culpado por pedir um delivery ou assinar um streaming. É permitir que você decida conscientemente onde seu dinheiro deve ficar.</p>
     <p class="break-highlight reveal reveal-delay-2">Controle não é cortar tudo.<br>É escolher.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="steps-head reveal">
+      <div class="eyebrow" style="color:var(--petrol)">DENTRO DO PAINEL</div>
+      <div class="h2" style="margin-top:10px;">Tudo o que você precisa pra ver seu dinheiro com clareza.</div>
+    </div>
+    <div class="chip-grid">
+      <div class="chip reveal">Renda e os 3 potes</div>
+      <div class="chip reveal reveal-delay-1">Mapa de gastos por categoria</div>
+      <div class="chip reveal reveal-delay-2">Caça a vazamentos (assinaturas)</div>
+      <div class="chip reveal reveal-delay-3">Checklist de 30 dias</div>
+      <div class="chip reveal">Cálculo automático</div>
+      <div class="chip reveal reveal-delay-1">Acesso pelo computador e celular</div>
+      <div class="chip reveal reveal-delay-2">Visão clara do que sobra no mês</div>
+      <div class="chip reveal reveal-delay-3">Atualize sempre que quiser</div>
+    </div>
   </div>
 </section>
 
@@ -695,6 +789,51 @@ footer a{ text-decoration:underline; }
   </div>
 </section>
 
+<section class="section-dark">
+  <div class="wrap">
+    <div class="deliver-head reveal" style="max-width:720px;">
+      <div class="eyebrow" style="color:var(--gold)">PARA QUEM QUER IR MAIS FUNDO</div>
+      <div class="h2" style="margin-top:10px;">Controle <span style="color:var(--gold)">TOTAL</span> da sua vida financeira.</div>
+      <p class="lede mx-auto">Além do painel, ebook e planner, o plano Controle Total inclui um kit completo pra sair do "eu acho" e ir direto pra "eu sei exatamente quanto tenho".</p>
+    </div>
+    <div class="premium-grid">
+      <div class="premium-card reveal">
+        <span class="premium-tag">Incluso no Controle Total</span>
+        <div class="premium-title">Kit "Conte até os Centavos"</div>
+        <p class="premium-desc">Ebook de 15 páginas + planner de 30 dias + guia de início rápido, pra registrar cada centavo sem esforço.</p>
+      </div>
+      <div class="premium-card reveal reveal-delay-1">
+        <span class="premium-tag">Incluso no Controle Total</span>
+        <div class="premium-title">3 Planilhas de Metas de Economia</div>
+        <p class="premium-desc">Níveis Básico, Intermediário e Avançado — pra guardar dinheiro no seu ritmo e ver o progresso.</p>
+      </div>
+      <div class="premium-card reveal reveal-delay-2">
+        <span class="premium-tag">Incluso no Controle Total</span>
+        <div class="premium-title">Planilha "Sai do Vermelho"</div>
+        <p class="premium-desc">Um plano estruturado para organizar e quitar dívidas sem perder o fôlego.</p>
+      </div>
+      <div class="premium-card reveal">
+        <span class="premium-tag">Incluso no Controle Total</span>
+        <div class="premium-title">Guia de Assinaturas</div>
+        <p class="premium-desc">Como identificar e cancelar gastos recorrentes esquecidos que corroem seu orçamento.</p>
+      </div>
+      <div class="premium-card reveal reveal-delay-1">
+        <span class="premium-tag">Incluso no Controle Total</span>
+        <div class="premium-title">Guia + Simulador de Juros Compostos</div>
+        <p class="premium-desc">Entenda como pequenas economias mensais crescem com o tempo — e comece a fazer o dinheiro trabalhar por você.</p>
+      </div>
+      <div class="premium-card premium-bonus reveal reveal-delay-2">
+        <span class="premium-tag">Bônus</span>
+        <div class="premium-title">Prioridade no suporte</div>
+        <p class="premium-desc">Ficou com dúvida sobre o painel ou os materiais? Conte com nosso canal de suporte.</p>
+      </div>
+    </div>
+    <div class="center reveal" style="margin-top:44px;">
+      <a href="#" class="btn btn-gold" data-cta>QUERO CONHECER OS PLANOS →</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-paper2" id="oferta">
   <div class="wrap">
     <div class="deliver-head reveal">
@@ -731,7 +870,9 @@ footer a{ text-decoration:underline; }
           <li>Ebook do método</li>
           <li>Planner de 30 dias</li>
         </ul>
+        <p class="plan-blurb">Pra quem já consegue juntar um pouco de dinheiro todo mês, mas quer clareza de verdade.</p>
         <a href="https://pay.kirvano.com/f2a9d7fc-20d1-493a-8999-e5e35d0e9408" class="btn" data-cta-plan="basico">Consigo juntar um pouco de dinheiro →</a>
+        <p class="plan-trust">Pagamento único • Acesso imediato</p>
       </div>
 
       <div class="plan-card featured">
@@ -748,9 +889,11 @@ footer a{ text-decoration:underline; }
           <li>3 planilhas de metas</li>
           <li>Planilha "Sai do Vermelho"</li>
           <li>Guia de Assinaturas</li>
-          <li>Guia de Juros Compostos</li>
+          <li>Guia + Simulador de Juros Compostos</li>
         </ul>
+        <p class="plan-blurb">Pra quem está determinado a mudar de vida financeira de vez.</p>
         <a href="https://pay.kirvano.com/c415b5f7-f676-48de-b1c9-2f25defad2c5" class="btn btn-gold" data-cta-plan="premium">Quero juntar meus primeiros R$ 10 mil →</a>
+        <p class="plan-trust">Pagamento único • Acesso imediato</p>
       </div>
     </div>
   </div>
@@ -781,8 +924,8 @@ footer a{ text-decoration:underline; }
         <div class="receipt-row"><span>Painel interativo</span><span>INCLUSO</span></div>
         <div class="receipt-row"><span>Ebook</span><span>INCLUSO</span></div>
         <div class="receipt-row"><span>Planner 30 dias</span><span>INCLUSO</span></div>
-        <div class="receipt-row"><span>Valor normal</span><span>R$ 89,90</span></div>
-        <div class="receipt-row discount-row"><span>Desconto promocional</span><span>− R$ 65,00</span></div>
+        <div class="receipt-row"><span>Valor normal</span><span>R$ 59,90</span></div>
+        <div class="receipt-row discount-row"><span>Desconto promocional</span><span>− R$ 35,00</span></div>
         <div class="receipt-total"><span>TOTAL HOJE</span><span>R$ 24,90</span></div>
         <div class="big-receipt-foot">PAGAMENTO ÚNICO · ACESSO IMEDIATO</div>
       </div>
@@ -792,7 +935,7 @@ footer a{ text-decoration:underline; }
       <p>Desta vez, use R$ 24,90 para entender melhor para onde os próximos estão indo.</p>
     </div>
     <div class="decision-cta reveal reveal-delay-2">
-      <a href="#" class="btn btn-gold" data-cta>SIM, QUERO ACESSAR POR R$ 24,90 →</a>
+      <a href="#" class="btn btn-gold" data-cta>SIM, QUERO COMEÇAR →</a>
       <div class="decision-micro">Compra segura • Acesso imediato</div>
     </div>
   </div>
@@ -807,6 +950,23 @@ footer a{ text-decoration:underline; }
 </section>
 
 <section class="section-paper2">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <div class="h2">Feito pra quem quer clareza —<br>não pra quem quer virar especialista.</div>
+    </div>
+    <p class="lede mx-auto" style="text-align:center;">Você não precisa:</p>
+    <ul class="negative-list reveal reveal-delay-1">
+      <li>Entender fórmulas complicadas</li>
+      <li>Dominar planilha ou Excel</li>
+      <li>Ser contador</li>
+      <li>Decorar termos financeiros</li>
+      <li>Passar horas organizando números</li>
+    </ul>
+    <p class="lede mx-auto reveal reveal-delay-2" style="text-align:center; margin-top:28px;">O painel foi pensado pra quem quer algo simples, visual e rápido de usar — mesmo sem nenhuma experiência com finanças.</p>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="faq-head reveal">
       <div class="h2">Perguntas frequentes</div>
@@ -855,8 +1015,7 @@ footer a{ text-decoration:underline; }
 
     <div class="final-price reveal reveal-delay-2">
       <div class="price-badge on-dark" style="align-items:center;">
-        <span class="price-tag-label">Oferta promocional</span>
-        <span class="price-old">R$ 89,90</span>
+        <span class="price-tag-label">A partir de</span>
         <span class="price-new">R$ 24,90</span>
       </div>
     </div>
@@ -878,7 +1037,6 @@ footer a{ text-decoration:underline; }
 </div>
 
 <script>
-const CHECKOUT_URL = "https://pay.kirvano.com/f2a9d7fc-20d1-493a-8999-e5e35d0e9408";
 const META_PIXEL_ID = "INSERIR_META_PIXEL_ID";
 
 function trackEvent(name){
@@ -887,7 +1045,7 @@ function trackEvent(name){
 trackEvent('PageView');
 
 let viewContentFired = false;
-const offerObserverTarget = document.querySelector('.offer-panel') || document.querySelector('.decision-wrap');
+const offerObserverTarget = document.querySelector('.plans-grid');
 if (offerObserverTarget && 'IntersectionObserver' in window){
   const vcObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -902,7 +1060,7 @@ if (offerObserverTarget && 'IntersectionObserver' in window){
 }
 
 document.querySelectorAll('[data-cta]').forEach(el=>{
-  el.setAttribute('href', CHECKOUT_URL);
+  el.setAttribute('href', '#oferta');
   el.addEventListener('click', ()=> trackEvent('InitiateCheckout'));
 });
 
