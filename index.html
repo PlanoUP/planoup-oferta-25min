@@ -535,8 +535,21 @@ footer a{ text-decoration:underline; }
 .center{ text-align:center; }
 .mx-auto{ margin-left:auto; margin-right:auto; }
 </style>
+
+<!-- Meta Pixel: PlanoUP | Pixel Principal -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1387214533512450');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel -->
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1387214533512450&ev=PageView&noscript=1"></noscript>
 
 <header class="site-header">
   <div class="wrap">
@@ -1016,12 +1029,34 @@ footer a{ text-decoration:underline; }
 </div>
 
 <script>
-const META_PIXEL_ID = "INSERIR_META_PIXEL_ID";
-
-function trackEvent(name){
-  if (window.fbq) { window.fbq('track', name); }
+// Pixel inicializado no <head> (ID 1387214533512450). PageView já é disparado lá.
+function trackEvent(name, params){
+  if (window.fbq) { params ? window.fbq('track', name, params) : window.fbq('track', name); }
 }
-trackEvent('PageView');
+
+// ---------- Repasse de UTMs para o checkout Kirvano (leitura pela Utmify) ----------
+(function(){
+  var KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','fbclid','src','sck','xcod'];
+  var STORE = 'planoup-utms-v1';
+  var params = {};
+  try { params = JSON.parse(localStorage.getItem(STORE) || '{}') || {}; } catch(e) { params = {}; }
+  var qs = new URLSearchParams(window.location.search);
+  // UTMs novas na URL substituem as salvas (atribui a venda ao último anúncio clicado)
+  var found = KEYS.some(function(k){ return !!qs.get(k); });
+  if (found) {
+    params = {};
+    KEYS.forEach(function(k){ var v = qs.get(k); if (v) params[k] = v; });
+  }
+  if (found) { try { localStorage.setItem(STORE, JSON.stringify(params)); } catch(e) {} }
+  if (!Object.keys(params).length) return;
+  document.querySelectorAll('a[href*="pay.kirvano.com"]').forEach(function(a){
+    try {
+      var url = new URL(a.getAttribute('href'));
+      Object.keys(params).forEach(function(k){ if (!url.searchParams.has(k)) url.searchParams.set(k, params[k]); });
+      a.setAttribute('href', url.toString());
+    } catch(e) {}
+  });
+})();
 
 let viewContentFired = false;
 const offerObserverTarget = document.querySelector('.plans-grid');
@@ -1029,22 +1064,30 @@ if (offerObserverTarget && 'IntersectionObserver' in window){
   const vcObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting && !viewContentFired){
-        trackEvent('ViewContent');
+        trackEvent('ViewContent', {content_name: 'Controle Seu Dinheiro em 25 Minutos', content_category: 'Oferta', currency: 'BRL', value: 24.90});
         viewContentFired = true;
         vcObserver.disconnect();
       }
     });
-  }, {threshold:0.4});
+  }, {threshold:0.1});
   vcObserver.observe(offerObserverTarget);
 }
 
+// Botões que só rolam até a oferta: não disparam InitiateCheckout (evita inflar o evento)
 document.querySelectorAll('[data-cta]').forEach(el=>{
   el.setAttribute('href', '#oferta');
-  el.addEventListener('click', ()=> trackEvent('InitiateCheckout'));
 });
 
+// Botões que levam ao checkout: InitiateCheckout com valor do plano
+var PLAN_INFO = {
+  basico:  {content_name: 'Plano Básico', value: 24.90},
+  premium: {content_name: 'Plano Controle Total', value: 37.00}
+};
 document.querySelectorAll('[data-cta-plan]').forEach(el=>{
-  el.addEventListener('click', ()=> trackEvent('InitiateCheckout'));
+  el.addEventListener('click', ()=>{
+    var info = PLAN_INFO[el.getAttribute('data-cta-plan')] || {};
+    trackEvent('InitiateCheckout', {content_name: info.content_name, currency: 'BRL', value: info.value, num_items: 1});
+  });
 });
 
 const revealEls = document.querySelectorAll('.reveal, .underline-draw, .receipt-row');
