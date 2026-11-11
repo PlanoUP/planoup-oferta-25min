@@ -1,0 +1,62 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1794412078.4539824,
+    "seen": 1794412081.4062898,
+    "ast_hash": "9b3428cfa7c2452a6a3face0d5b08837",
+    "semantic_hash": ""
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1794412078.4170728,
+    "seen": 1794412081.406299,
+    "ast_hash": "9b31786b637be3c13978bec4c2330752",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1794412078.4172094,
+    "seen": 1794412081.4063032,
+    "ast_hash": "67d88e9d0760c3ba54c75dfd9551c1c5",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.4063056,
+    "ast_hash": "0f7fda98d39b2b326c7d830c14da68f7",
+    "semantic_hash": ""
+  },
+  "images/decisao-compra-preview.png": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.406308,
+    "ast_hash": "8b53a7f66069eb95da2e4e87c21f6b41",
+    "semantic_hash": ""
+  },
+  "images/decisao-compra-preview.webp": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.40631,
+    "ast_hash": "39df585a6443a2e67761c75061732b2e",
+    "semantic_hash": ""
+  },
+  "images/hero-app-preview.png": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.4063125,
+    "ast_hash": "a2383350387f15f23b52cae6883cb495",
+    "semantic_hash": ""
+  },
+  "images/hero-app-preview.webp": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.4063141,
+    "ast_hash": "e0fa245b270343208b6cec908eb2fbf2",
+    "semantic_hash": ""
+  },
+  "images/painel-real-preview.png": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.406316,
+    "ast_hash": "2ad8edb6d3c0d01e84e9eb672e3363bb",
+    "semantic_hash": ""
+  },
+  "images/painel-real-preview.webp": {
+    "mtime": 1794412057.2341948,
+    "seen": 1794412081.4063182,
+    "ast_hash": "33874b5e525e89501a033672c9ef1952",
+    "semantic_hash": ""
+  }
+}
